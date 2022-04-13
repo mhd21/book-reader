@@ -4,8 +4,12 @@ let book;
 let rendition;
 
 ipcRenderer.on('open-file', function (event, filepath) {
-  const area = document.getElementById('area');
-  area.innerHTML = '';
+  const area = document.getElementById('container');
+  area.innerHTML = `
+      <div id="area"></div>
+      <a id="prev" href="#prev" class="arrow">‹</a>
+      <a id="next" href="#next" class="arrow">›</a>
+  `;
 
   const ePub = require('epubjs');
 
@@ -14,6 +18,7 @@ ipcRenderer.on('open-file', function (event, filepath) {
     width: 800,
     height: 600,
     spread: 'always',
+    flow: 'paginated',
   });
 
   rendition.display();
