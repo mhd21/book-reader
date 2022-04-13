@@ -1,16 +1,22 @@
 const { ipcRenderer } = require('electron');
 
+let book;
+let rendition;
+
 ipcRenderer.on('open-file', function (event, filepath) {
+  const area = document.getElementById('area');
+  area.innerHTML = '';
+
   const ePub = require('epubjs');
 
-  var book = new ePub.default(filepath);
-  var rendition = book.renderTo('area', {
+  book = new ePub.default(filepath);
+  rendition = book.renderTo('area', {
     width: 800,
     height: 600,
     spread: 'always',
   });
 
-  rendition.display(40);
+  rendition.display();
 
   book.ready.then(function () {
     var next = document.getElementById('next');
