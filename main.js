@@ -1,7 +1,7 @@
 // main.js
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu, dialog } = require('electron');
+const { app, BrowserWindow, Menu, MenuItem, dialog } = require('electron');
 const path = require('path');
 
 let mainWindow;
@@ -29,21 +29,33 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  const menuTemplate = [
-    {
-      label: 'Open File',
-      click() {
-        dialog
-          .showOpenDialog({ properties: ['openFile', 'multiSelections'] })
-          .then((res) => {
-            console.log(res);
-            mainWindow.webContents.send('open-file', res.filePaths[0]);
-          });
-      },
+  //   const menuTemplate = [
+  //     {
+  //       label: 'Open File',
+  //       click() {
+  //         dialog
+  //           .showOpenDialog({ properties: ['openFile', 'multiSelections'] })
+  //           .then((res) => {
+  //             mainWindow.webContents.send('open-file', res.filePaths[0]);
+  //           });
+  //       },
+  //     },
+  //   ];
+
+  const menuItem = new MenuItem({
+    label: 'Open File',
+    click() {
+      dialog
+        .showOpenDialog({ properties: ['openFile', 'multiSelections'] })
+        .then((res) => {
+          mainWindow.webContents.send('open-file', res.filePaths[0]);
+        });
     },
-  ];
-  const menu = Menu.buildFromTemplate(menuTemplate);
-  Menu.setApplicationMenu(menu);
+  });
+
+  // add open file to file menu (default electron menu bar)
+  Menu.getApplicationMenu().items[0].submenu.insert(0, menuItem);
+
   createWindow();
 
   app.on('activate', () => {
