@@ -1,0 +1,16 @@
+{
+    "name": "epub-reader",
+    "version": "1.0.0",
+    "description": "epub reader",
+    "main": "main.js",
+    "author": "Mohammad Mehdi Pakbaz",
+    "license": "MIT",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^18.0.3",
+        "epubjs": "^0.3.93",
+        "prettier": "^2.6.2"
+    }
+}
