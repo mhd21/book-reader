@@ -6,7 +6,8 @@ let rendition;
 ipcRenderer.on('open-file', function (event, filepath) {
   console.log(filepath);
   const splits = filepath.split('\\');
-  const ext = splits[splits.length - 1].split('.')[1];
+  const extSplits = splits[splits.length - 1].split('.');
+  const ext = extSplits[extSplits.length - 1];
 
   if (ext === 'epub') {
     const epub = require('./epub');
