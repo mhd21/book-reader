@@ -530,6 +530,13 @@ path-webpack@0.0.3:
   resolved "https://registry.yarnpkg.com/path-webpack/-/path-webpack-0.0.3.tgz#ff6dec749eec5a94605c04d5f63fc55607a03a16"
   integrity sha1-/23sdJ7sWpRgXATV9j/FVgegOhY=
 
+pdfjs-dist@^2.13.216:
+  version "2.13.216"
+  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.13.216.tgz#251a11c9c8c6db19baacd833a4e6986c517d1ab3"
+  integrity sha512-qn/9a/3IHIKZarTK6ajeeFXBkG15Lg1Fx99PxU09PAU2i874X8mTcHJYyDJxu7WDfNhV6hM7bRQBZU384anoqQ==
+  dependencies:
+    web-streams-polyfill "^3.2.0"
+
 pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
@@ -704,6 +711,11 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+web-streams-polyfill@^3.2.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.2.1.tgz#71c2718c52b45fd49dbeee88634b3a60ceab42a6"
+  integrity sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==
 
 wrappy@1:
   version "1.0.2"
